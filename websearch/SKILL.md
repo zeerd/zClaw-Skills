@@ -1,6 +1,6 @@
 ---
 name: websearch
-description: "Search web content using Bing search engine. Use when: user asks to search the web, find information online, look up topics, research subjects, or find websites. Searches via https://cn.bing.com/search?q=<keyword> format."
+description: Search web content by keywords. When user asks to search the web, find information online, look up topics, research subjects, or find websites. 基于关键词搜索网络内容。使用场景：用户要求搜索网络、在网上搜索、在网上查找、在线查找信息、查询话题、研究主题或寻找网站。
 ---
 
 # Web Search Skill
@@ -18,28 +18,37 @@ Search the web using Bing search engine.
 - "Research [topic]"
 - "Where can I find [information]?"
 
-## Search Format
+## 能力说明
 
-### Basic Search
+给一组关键词（keywords），返回干净的 Markdown 格式搜索结果列表，保留：
+- 标题层级（# ## ###）
+- 超链接（[文字](url)）
+- 图片（![alt](url)）
+
+## 使用方式
+
+exec: python3 scripts/fetch.py https://cn.bing.com/search?ensearch=1&q=<keywords> 30000
+
+## 安装依赖
 
 ```bash
-curl -s "https://cn.bing.com/search?q=<keyword>"
+# 安装基础依赖（包含 fetchers）
+pip install "scrapling[fetchers]" html2text --break-system-packages
+
+# 安装浏览器依赖（首次使用需要执行）
+scrapling install
 ```
 
-### Example Searches
+## 脚本路径
 
+`scripts/fetch.py` — Scrapling + html2text 提取脚本
+
+调用方式：
 ```bash
-# Technology news
-curl -s "https://cn.bing.com/search?q=AI+latest+news+2024"
-
-# Product research
-curl -s "https://cn.bing.com/search?q=best+laptop+for+programming"
-
-# How-to queries
-curl -s "https://cn.bing.com/search?q=how+to+install+Python+on+Ubuntu"
+python3 ~/.openclaw/workspace/skills/websearch/scripts/fetch.py https://cn.bing.com/search?ensearch=1&q=<keywords> [max_chars]
 ```
 
-### Search Tips
+## Search Tips
 
 - Use `+` for spaces in URLs
 - Use quotes for exact phrases: `"exact phrase"`
