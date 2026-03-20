@@ -1,5 +1,5 @@
 ---
-name: websearch
+name: web-keywords-searcher
 description: Search web content by keywords. When user asks to search the web, find information online, look up topics, research subjects, or find websites. 基于关键词搜索网络内容。使用场景：用户要求搜索网络、在网上搜索、在网上查找、在线查找信息、查询话题、研究主题或寻找网站。
 ---
 

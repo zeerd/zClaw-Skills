@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ ! -d ~/.openclaw/workspace/.venv ] ; then
+    python3 -m venv ~/.openclaw/workspace/.venv
+fi
+source ~/.openclaw/workspace/.venv/bin/activate
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
 install -d $HOME/.openclaw/workspace/skills/
 for i in *; do
     # 跳过非目录

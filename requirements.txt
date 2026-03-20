@@ -1,0 +1,3 @@
+-r ./web-content-fetcher/requirements.txt
+-r ./web-keywords-searcher/requirements.txt
+-r ./article-to-cartoon-image/requirements.txt

@@ -49,22 +49,13 @@ URL
 
 > 用 Scrapling 读取：https://mp.weixin.qq.com/s/xxx
 
-## 安装依赖
-
-```bash
-# 安装基础依赖（包含 fetchers）
-pip install "scrapling[fetchers]" html2text playwright --break-system-packages
-
-# 安装浏览器依赖（首次使用需要执行）
-scrapling install
-```
-
 ## 脚本路径
 
 `scripts/fetch.py` — Scrapling + html2text 提取脚本
 
 调用方式：
 ```bash
+export PLAYWRIGHT_BROWSERS_PATH="/app/ms-playwright"
 python3 ~/.openclaw/workspace/skills/web-content-fetcher/scripts/fetch.py <url> [max_chars]
 ```
 
