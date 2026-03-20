@@ -1,3 +1,6 @@
+提示词：https://weibo.com/1727858283/QmJbPdxvL
+
+# 使用
 
 手动修改`.openclaw/openclaw.json`文件，或者去配置界面添加：
 ```jsonl
