@@ -1,0 +1,10 @@
+{
+    "id": "zclaw-skills",
+    "name": "zClaw Skills",
+    "skills": ["./skills"],
+    "configSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+    }
+}

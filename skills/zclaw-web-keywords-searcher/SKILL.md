@@ -1,11 +1,15 @@
 ---
-name: web-keywords-searcher
+name: zclaw-web-keywords-searcher
 description: Search web content by keywords. When user asks to search the web, find information online, look up topics, research subjects, or find websites. 基于关键词搜索网络内容。使用场景：用户要求搜索网络、在网上搜索、在网上查找、在线查找信息、查询话题、研究主题或寻找网站。
 ---
 
 # Web Search Skill
 
 Search the web using Bing search engine.
+
+## 🚨 执行前必读
+
+- ✅ **venv**: 使用`~/.openclaw/workspace/.venv/bin/activate`环境执行脚本
 
 ## When to Use
 
@@ -28,6 +32,8 @@ Search the web using Bing search engine.
 ## 使用方式
 
 exec: python3 scripts/fetch.py https://cn.bing.com/search?ensearch=1&q=<keywords> 30000
+
+- 当触发此技能时，请直接执行 `scripts/fetch.py` 脚本，并将用户的请求作为参数传递给脚本。不要尝试自己编写新脚本。
 
 ## 安装依赖
 

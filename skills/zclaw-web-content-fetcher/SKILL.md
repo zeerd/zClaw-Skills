@@ -1,5 +1,5 @@
 ---
-name: web-content-fetcher
+name: zclaw-web-content-fetcher
 description: >
   网页正文内容提取。支持 Scrapling+html2text / playwright / web_fetch 三级降级策略，
   自动返回干净的 Markdown 格式正文，保留标题、链接、图片 URL、列表结构。
@@ -8,6 +8,10 @@ description: >
 ---
 
 # Web Content Fetcher — 网页正文提取
+
+## 🚨 执行前必读
+
+- ✅ **venv**: 使用`~/.openclaw/workspace/.venv/bin/activate`环境执行脚本
 
 ## 能力说明
 
@@ -56,8 +60,10 @@ URL
 调用方式：
 ```bash
 export PLAYWRIGHT_BROWSERS_PATH="/app/ms-playwright"
-python3 ~/.openclaw/workspace/skills/web-content-fetcher/scripts/fetch.py <url> [max_chars]
+python3 ~/.openclaw/workspace/skills/zclaw-web-content-fetcher/scripts/fetch.py <url> [max_chars]
 ```
+
+- 当触发此技能时，请直接执行 `scripts/fetch.py` 脚本，并将用户的请求作为参数传递给脚本。不要尝试自己编写新脚本。
 
 ## 防死循环规则
 
