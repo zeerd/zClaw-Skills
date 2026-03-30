@@ -88,7 +88,7 @@ const plugin = {
                     // 准备参数
                     const scriptArgs = [
                         params.url,
-                        (params.max_chars || 30000).toString()
+                        (params.max_chars || 50000).toString()
                     ];
 
                     // 2. 使用自定义的 runPythonScript 运行

@@ -36,7 +36,7 @@ def fix_lazy_images(html_raw):
     return html_raw
 
 
-def html_to_markdown(html_raw, max_chars=30000):
+def html_to_markdown(html_raw, max_chars=50000):
     """
     把 HTML 转为 Markdown：处理懒加载图片、使用 html2text，并压缩多空行。
     返回截断后的 Markdown 字符串。
@@ -58,7 +58,7 @@ def html_to_markdown(html_raw, max_chars=30000):
         return ''
 
 
-def weibo_fetch(url, max_chars=30000):
+def weibo_fetch(url, max_chars=50000):
     content = ''
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -89,7 +89,7 @@ def weibo_fetch(url, max_chars=30000):
     return content
 
 
-def scrapling_fetch(url, max_chars=30000):
+def scrapling_fetch(url, max_chars=50000):
     page = Fetcher(auto_match=False).get(
         url,
         headers={
@@ -131,7 +131,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     url = sys.argv[1]
-    max_chars = int(sys.argv[2]) if len(sys.argv) > 2 else 30000
+    max_chars = int(sys.argv[2]) if len(sys.argv) > 2 else 50000
 
     text = None
     try:
@@ -139,7 +139,7 @@ if __name__ == '__main__':
             url.startswith("https://weibo.com/") or
             url.startswith("https://www.weibo.com/")
         ):
-            text = weibo_fetch(url)
+            text = weibo_fetch(url, max_chars)
         else:
             text, selector = scrapling_fetch(url, max_chars)
     except Exception as e:

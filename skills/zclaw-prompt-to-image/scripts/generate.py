@@ -27,34 +27,17 @@ workflow = {
             "title": "Prompt（负）"
         }
     },
-    "73": {
+    "83": {
         "inputs": {
-            "texts": [
-                "58",
-                0
-            ],
-            "folder_name": "Image-T2I",
-            "filename_prefix": "ComfyUI-T2I",
+            "filename_prefix": "ComfyUI",
             "images": [
                 "72:63",
                 0
             ]
         },
-        "class_type": "SaveImageTextDataSetToFolder",
+        "class_type": "SaveImage",
         "_meta": {
-            "title": "保存图像文本数据集"
-        }
-    },
-    "74": {
-        "inputs": {
-            "images": [
-                "72:63",
-                0
-            ]
-        },
-        "class_type": "PreviewImage",
-        "_meta": {
-            "title": "预览图像"
+            "title": "保存图像"
         }
     },
     "72:65": {
