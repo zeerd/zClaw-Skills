@@ -20,6 +20,11 @@
 * zclaw-full-body-profiling ： 身形细节提示词生成
 * zclaw-prompt-to-image : 提示词生成图片（Comfy UI）
 
+### 艺术创作
+
+* zclaw-novel-writing ：写小说
+* zclaw-novel-op-lyrics ： 为小说写片头曲
+
 ### 其他
 
 * zclaw-article-to-cartoon-image : 文章卡通组画化
